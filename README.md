@@ -1,6 +1,6 @@
 # mqttweewxhtml
 
-Jsontomqtt.py reads the json output to add in max/min/trends and then publishes additional topicsto mqtt.
+Jsontomqtt.py reads the json output to add in max/min/trends and then publishes additional topics to mqtt.
 
 Requires WeewxtoJson - https://github.com/teeks99/weewx-json
 
