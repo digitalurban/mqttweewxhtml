@@ -13,3 +13,9 @@ Edit /etc/weewx/skins/JSON $ sudo nano weewx.json.tmpl to add new tags (trend da
         #if $trend.outTemp.has_data
         "temp trend": {"value": $trend.outTemp.raw, "units": "$trend.outTemp.format(" ").lstrip()"},
         #end if 
+
+html includes standard and eink versions
+
+![eink](https://github.com/digitalurban/mqttweewxhtml/blob/main/Screenshot%202021-10-15%20at%2011.19.49.png)
+
+![standard](https://github.com/digitalurban/mqttweewxhtml/blob/main/Screenshot%202021-10-15%20at%2011.18.53.png)
