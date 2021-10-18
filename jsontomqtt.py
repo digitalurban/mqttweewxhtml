@@ -9,8 +9,8 @@ import time
 print("creating new instance")
 client = mqtt.Client("P1") #  create new instance
 print("connecting to broker")
-client.username_pw_set("ucfnaps", "Wc1eMqtt.")
-client.connect("mqtt.cetools.org", 1884) #  connect to broker
+client.username_pw_set("YourUsername", "YourPassword")
+client.connect("YourMQTTServer", YourMQTTPort) #  connect to broker
 
 
 
@@ -36,11 +36,11 @@ print(windmax)
 print(barotrend)
 print(temptrend)
 
-client.publish("personal/ucfnaps/downhamweather/tempmin", tempmin, retain=True)
-client.publish("personal/ucfnaps/downhamweather/tempmax", tempmax, retain=True)
-client.publish("personal/ucfnaps/downhamweather/pressuremin", pressuremin, retain=True)
-client.publish("personal/ucfnaps/downhamweather/pressuremax", pressuremax, retain=True)
-client.publish("personal/ucfnaps/downhamweather/pressuretrend", barotrend, retain=True)
-client.publish("personal/ucfnaps/downhamweather/windmax", windmax, retain=True)
-client.publish("personal/ucfnaps/downhamweather/barotrend", barotrend, retain=True)
-client.publish("personal/ucfnaps/downhamweather/temptrend", temptrend, retain=True)
+client.publish("weather/tempmin", tempmin, retain=True)
+client.publish("weather/tempmax", tempmax, retain=True)
+client.publish("weather/pressuremin", pressuremin, retain=True)
+client.publish("weather/pressuremax", pressuremax, retain=True)
+client.publish("weather/pressuretrend", barotrend, retain=True)
+client.publish("weather/windmax", windmax, retain=True)
+client.publish("weather/barotrend", barotrend, retain=True)
+client.publish("weather/temptrend", temptrend, retain=True)
