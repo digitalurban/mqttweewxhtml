@@ -27,8 +27,8 @@
 	 <script type = "text/javascript" language = "javascript">
 		var mqtt;
 		var reconnectTimeout = 2000;
-		var host="mqtt.cetools.org"; //change this
-		var port=8080;
+		var host="yourmqttsever"; //change this
+		var port=8080; // edit this as need be
 		var useSSL =true;
 		var clientID = "clientID" + parseInt(Math.random() * 100); 
 		
@@ -46,7 +46,7 @@
 		
      // Subscribe to topics
 			
-		mqtt.subscribe("personal/ucfnaps/#");	
+		mqtt.subscribe("weather/#");	//edit this to your mqtt feed
 		
 	
 	  }
@@ -74,33 +74,33 @@
 			  
 			  
 			// Max/Mins Additional Data from WEEWX JSON
-			if(msg.destinationName == "personal/ucfnaps/downhamweather/tempmax"){   
+			if(msg.destinationName == "weather/tempmax"){   
 			tempmax=msg.payloadString;
 		 	$("#tempmax").html(tempmax);
 			console.log(tempmax);
 				}   
 			  
-			if(msg.destinationName == "personal/ucfnaps/downhamweather/tempmin"){   
+			if(msg.destinationName == "weather/tempmin"){   
 			tempmin=msg.payloadString;
 		 	$("#tempmin").html(tempmin);
 			console.log(tempmin);
 				}   
 			  
 			
-			 if(msg.destinationName == "personal/ucfnaps/downhamweather/pressuremax"){   
+			 if(msg.destinationName == "weather/pressuremax"){   
 		    pressuremax=msg.payloadString;
 		 	$("#baromax").html(pressuremax);
 			console.log(pressuremax);
 				}   
 			  
-			if(msg.destinationName == "personal/ucfnaps/downhamweather/pressuremin"){   
+			if(msg.destinationName == "weather/pressuremin"){   
 			pressuremin=msg.payloadString;
 		 	$("#baromin").html(pressuremin);
 			console.log(pressuremin);
 				}    
 			  
 			    
-			if(msg.destinationName == "personal/ucfnaps/downhamweather/barotrend"){   
+			if(msg.destinationName == "weather/barotrend"){   
 			pressurehour=msg.payloadString.replace('mbar', '')
 			$("#pbarohour").html(pressurehour);
 		    console.log(pressurehour);
@@ -134,13 +134,13 @@
 // Temp Trend
 			  
 			  
-			if(msg.destinationName == "personal/ucfnaps/downhamweather/temptrend"){   
+			if(msg.destinationName == "weather/temptrend"){   
 			temptrend=msg.payloadString;
 			$("#temptrend").html(temptrend);
 		    console.log(temptrend);	
 			}
 // Wind Max			  
-			if(msg.destinationName == "personal/ucfnaps/downhamweather/windmax"){   
+			if(msg.destinationName == "weather/windmax"){   
 			windmax=msg.payloadString;
 		 	$("#windmaxgust").html(windmax);
 			console.log(windmax);
@@ -150,30 +150,30 @@
 			  
 			//Davis AQI	  
 			  
-	        if(msg.destinationName == "personal/ucfnaps/airquality/davisaqi"){   
+	        if(msg.destinationName == "weather/davisaqi"){   
 			AQI=msg.payloadString;
 		 	$("#AQI").html(AQI);
 			console.log(AQI);
 				} 
-			if(msg.destinationName == "personal/ucfnaps/airquality/davisquality"){   
+			if(msg.destinationName == "weather/davisquality"){   
 			aqiquality=msg.payloadString;
 		 	$("#aqiquality").html(aqiquality);
 			console.log(aqiquality);
 				}   
 			
-			if(msg.destinationName == "personal/ucfnaps/airquality/davispm25"){   
+			if(msg.destinationName == "weather/davispm25"){   
 			pmtwo=msg.payloadString;
 		 	$("#pmtwo").html(pmtwo);
 			console.log(pmtwo);
 				}     
 			  
-			if(msg.destinationName == "personal/ucfnaps/airquality/davispm10"){   
+			if(msg.destinationName == "weather/davispm10"){   
 			pmten=msg.payloadString;
 		 	$("#pmten").html(pmten);
 			console.log(pmten);
 				}   
 			  
-			if(msg.destinationName == "personal/ucfnaps/airquality/davistrend"){   
+			if(msg.destinationName == "weather/davistrend"){   
 			pmtrend=msg.payloadString;
 		 	$("#pmtrend").html(pmtrend);
 			console.log(pmtrend);
@@ -181,19 +181,19 @@
 			  
 			// Environ Agency
 			  
-			if(msg.destinationName == "personal/ucfnaps/environ/marham"){   
+			if(msg.destinationName == "weather/environ/marham"){   
 			marham=msg.payloadString;
 		 	$("#marham").html(marham);
 			console.log(marham);
 				}   
 			
-			if(msg.destinationName == "personal/ucfnaps/environ/ely"){   
+			if(msg.destinationName == "weather/environ/ely"){   
 			ely=msg.payloadString;
 		 	$("#ely").html(ely);
 			console.log(ely);
 				}   
 			  
-			if(msg.destinationName == "personal/ucfnaps/environ/denver"){   
+			if(msg.destinationName == "weather/environ/denver"){   
 			denver=msg.payloadString;
 		 	$("#denver").html(denver);
 			console.log(denver);
@@ -203,7 +203,7 @@
 			  
 			// Wind  
 			
-			if(msg.destinationName == "personal/ucfnaps/downhamweather/loop"){
+			if(msg.destinationName == "weather/loop"){
 			var data = jQuery.parseJSON(msg.payloadString)	
 			
 	        wind = (data['windSpeed_mph']);	
