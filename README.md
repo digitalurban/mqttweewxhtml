@@ -14,7 +14,7 @@ Edit /etc/weewx/skins/JSON $ sudo nano weewx.json.tmpl to add new tags (trend da
         "temp trend": {"value": $trend.outTemp.raw, "units": "$trend.outTemp.format(" ").lstrip()"},
         #end if 
 
-html includes standard and eink versions
+html includes standard and eink versions - these are general templates and need to be edited to your own mqtt feeds. If you just want the mqtt feeds then ignore the html pages.
 
 ![eink](https://github.com/digitalurban/mqttweewxhtml/blob/main/Screenshot%202021-10-15%20at%2011.19.49.png)
 
